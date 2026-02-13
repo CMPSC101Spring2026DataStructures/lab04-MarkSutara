@@ -62,7 +62,7 @@ def get_computer_choice():
 	return computer_choice
 
 # : Implement this function to determine the winner of a round.
-def determine_winner(user_choice, computer_choice):
+def determine_winner(user_choice, computer_choice, user_score, computer_score):
 	"""Return 'user', 'computer', or 'tie' based on the choices."""
 	if user_choice == computer_choice:
 		console.print("[blue]It's a tie![/blue]")
@@ -83,7 +83,7 @@ def determine_winner(user_choice, computer_choice):
 	
 
 # : Implement this function to print the round result with color.
-def print_round_result(user_choice, computer_choice, winner):
+def print_round_result(user_choice, computer_choice, user_score, computer_score): # winner
 	"""Print the choices and the winner of the round using rich colors."""
 	console.print("\n[bold underline]Game Over![/bold underline]")
 	console.print(f"[cyan]Your score: {user_score}[/cyan]")
@@ -104,9 +104,9 @@ def main():
 		user_choice, user_choice = get_user_choice()
 		computer_choice = get_computer_choice()
 		# TODO: Determine winner
-		user_score, computer_score = determine_winner(user_choice, computer_choice)
+		user_score, computer_score = determine_winner(user_choice, computer_choice, user_score, computer_score)
 		# TODO: Print round result
-		print_round_result(user_choice, computer_choice)
+		print_round_result(user_choice, computer_choice, user_score, computer_score)
 		# TODO: Update scores
 		pass
 	# TODO: Print final scores and announce the overall winner
@@ -116,10 +116,11 @@ def main():
 		console.print("[bold red]Sorry, the computer wins the game.[/bold red]")
 	else:
 		console.print("[yellow]It's a tie game![/yellow]")
+	if user_score > computer_score:
+		console.print("[bold green]Congratulations, you win the game![/bold green]")
+
 	
 
 if __name__ == "__main__":
 	main()
-	if user_score > computer_score:
 
-		console.print("[bold green]Congratulations, you win the game![/bold green]")
