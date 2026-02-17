@@ -105,6 +105,7 @@ def main():
 		user_score, computer_score = determine_winner(user_choice, computer_choice, user_score, computer_score) # determines winner using variables
 		print_round_result(user_choice, computer_choice, user_score, computer_score) # prints round result 
 		
+		
 	# prints final scores and announce the overall winner
 	if user_score > computer_score:
 		console.print("[bold green]Congratulations, you win the game![/bold green]")
@@ -114,7 +115,6 @@ def main():
 		console.print("[yellow]It's a tie game![/yellow]")
 	if user_score > computer_score:
 		console.print("[bold green]Congratulations, you win the game![/bold green]")
-		
 		
 		
 		
