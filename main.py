@@ -100,14 +100,10 @@ def main():
 	for round_num in range(1, rounds + 1):
 		console.print(f"\n[bold yellow]Round {round_num} of {rounds}[/bold yellow]")
 
-		
 		user_choice = get_user_choice() # gets user choice
 		computer_choice = get_computer_choice() # gets computer choice
-		# : Determine winner
 		user_score, computer_score = determine_winner(user_choice, computer_choice, user_score, computer_score) # determines winner using variables
-		# : Print round result
-		print_round_result(user_choice, computer_choice, user_score, computer_score) # prints round result and 
-		# : Update scores
+		print_round_result(user_choice, computer_choice, user_score, computer_score) # prints round result 
 		
 	# prints final scores and announce the overall winner
 	if user_score > computer_score:
@@ -118,6 +114,10 @@ def main():
 		console.print("[yellow]It's a tie game![/yellow]")
 	if user_score > computer_score:
 		console.print("[bold green]Congratulations, you win the game![/bold green]")
+		
+		
+		
+		
 
 	
 
