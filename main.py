@@ -1,7 +1,7 @@
 
 # Basic Rock Paper Scissors Game
-# Name: Add Your Name Here
-# Date: Add The Date Here
+# Name: Mark
+# Date: 2/17/2026
 
 import random
 
@@ -40,7 +40,7 @@ def get_user_choice():
 	"""Prompt the user for their choice and return 'rock', 'paper', or 'scissors'."""
 	#: Use console.input and validate input (accept 1/2/3 or words)
 	while True:
-		user_input = console.input("[bold]Choose rock (1), paper (2), or scissors (3): [/bold]").strip().lower()
+		user_input = console.input("[bold]Choose rock (1), paper (2), or scissors (3): [/bold]").strip().lower() # strip and lower account for capitilization and spaces respectively
 		if user_input in num_to_choice:
 			user_choice = num_to_choice[user_input]
 		else:
@@ -48,7 +48,7 @@ def get_user_choice():
 		if user_choice in choices:
 			break
 		else:
-			console.print("[red]Invalid choice. Please try again.[/red]")
+			console.print("[red]Invalid choice. Please try again.[/red]") # accounts for user error when typing
 	
 	return user_input, user_choice
 	
@@ -56,7 +56,7 @@ def get_user_choice():
 #: Implement this function to randomly select the computer's choice.
 def get_computer_choice():
 	"""Randomly return 'rock', 'paper', or 'scissors'."""
-	computer_choice = random.choice(choices)
+	computer_choice = random.choice(choices) # picks randomly from choices
 	console.print(f"[magenta]Computer chose: {computer_choice}[/magenta]")
 	
 	return computer_choice
@@ -71,10 +71,10 @@ def determine_winner(user_choice, computer_choice, user_score, computer_score):
 		(user_choice == 'paper' and computer_choice == 'rock') or
 		(user_choice == 'scissors' and computer_choice == 'paper')
 	):
-		console.print("[bold green]You win this round![/bold green]")
+		console.print("[bold green]You win this round![/bold green]") # accounts for winning
 		user_score += 1
 	else:
-		console.print("[bold red]Computer wins this round![/bold red]")
+		console.print("[bold red]Computer wins this round![/bold red]") # accounts for losing
 		computer_score += 1
 	
 	return user_score, computer_score
@@ -100,16 +100,16 @@ def main():
 	for round_num in range(1, rounds + 1):
 		console.print(f"\n[bold yellow]Round {round_num} of {rounds}[/bold yellow]")
 
-		# TODO: Get user and computer choices
-		user_choice, user_choice = get_user_choice()
-		computer_choice = get_computer_choice()
-		# TODO: Determine winner
-		user_score, computer_score = determine_winner(user_choice, computer_choice, user_score, computer_score)
-		# TODO: Print round result
-		print_round_result(user_choice, computer_choice, user_score, computer_score)
-		# TODO: Update scores
-		pass
-	# TODO: Print final scores and announce the overall winner
+		
+		user_choice = get_user_choice() # gets user choice
+		computer_choice = get_computer_choice() # gets computer choice
+		# : Determine winner
+		user_score, computer_score = determine_winner(user_choice, computer_choice, user_score, computer_score) # determines winner using variables
+		# : Print round result
+		print_round_result(user_choice, computer_choice, user_score, computer_score) # prints round result and 
+		# : Update scores
+		
+	# prints final scores and announce the overall winner
 	if user_score > computer_score:
 		console.print("[bold green]Congratulations, you win the game![/bold green]")
 	elif user_score < computer_score:
